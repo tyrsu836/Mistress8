@@ -1,0 +1,13 @@
+Download Master-8 Software Development Kit from: http://www.ampi.co.il/sdk.html
+
+Installation (Vista x64, Window7 x64)
+There is no Install program for the library. 
+Installation consists of the following steps:
+
+1.	Copy AmpiLib.dll to the local Hard Disk.
+2.	Open the command prompt in administrator mode (right click and select run as administrator)
+3.	Change the directory to use the 32bit version of RegSvr32 by typing:
+cd \Windows\SysWOW64\
+4.	Register its location by typing the following from the command line:
+        RegSvr32 C:\Master8\AmpiLib.dll
+
