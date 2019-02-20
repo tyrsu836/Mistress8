@@ -1,0 +1,33 @@
+#Suszie messing around with the arduino to see if she can program the LED like we want to program the lasers.
+
+import serial 
+import time 
+import pyfirmata
+from pyfirmata import Arduino, util
+board = Arduino('COM4')
+
+# Ideally want a GUI including a test button to turn the laser on to test the strength of the laser (just with an on/off button)
+
+# Then we still need a GUI to get user input re: the following info:
+pulsedelay = 3 # how long to wait between the light pulses
+pulselength = 1 # how long each light pulse will be
+numpulses = 5 # How many pulses per stimulation period
+numstims = 2 # how many stimulation periods per experiment
+timebetweenstims = 10 # how long to wait between stimulation periods
+
+# also potential for synching up Keef's live-mouse-tracking code
+
+pin = 13 # which pin the 
+on = 1
+off = 0
+
+
+for i in range(0, numstims):
+    for j in range(0, numpulses):
+        board.digital[pin].write(on)
+        time.sleep(pulselength)
+        board.digital[pin].write(off)
+        time.sleep(pulsedelay)
+    time.sleep(timebetweenstims)
+    
+    
